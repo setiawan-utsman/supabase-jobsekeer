@@ -84,5 +84,5 @@ Fitur utama yang disediakan antara lain:
 
 ### 1. Clone repository ini
 ```bash
-git clone https://github.com/username/supabase-jobsekeer.git
-cd app-jobs-seeker
+git clone https://github.com/setiawan-utsman/supabase-jobsekeer.git
+cd supabase-jobsekeer
