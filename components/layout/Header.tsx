@@ -5,7 +5,6 @@ import { Button } from "../ui/button";
 import { LABELSMENU } from "@/public/data/data";
 import Image from "next/image";
 import { LogOutIcon } from "lucide-react";
-import { clearAuthToken } from "../auth/auth";
 import { useMutation } from "@tanstack/react-query";
 import { logoutUser } from "@/services/auth";
 

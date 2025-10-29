@@ -29,7 +29,6 @@ export default function Login() {
     onSuccess: async(data: any) => {
       const session = data?.session;
       await setAuthToken(session.access_token);
-      // sessionStorage.setItem("auth_token", session.access_token); // ✅ simpan token
       router.push("/jobs");
     },
     onError: (error) => {
