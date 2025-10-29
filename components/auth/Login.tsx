@@ -26,9 +26,10 @@ export default function Login() {
 
   const loginService = useMutation({
     mutationFn: loginUser,
-    onSuccess: (data: any) => {
+    onSuccess: async(data: any) => {
       const session = data?.session;
-      setAuthToken(session.access_token);
+      await setAuthToken(session.access_token);
+      // sessionStorage.setItem("auth_token", session.access_token); // ✅ simpan token
       router.push("/jobs");
     },
     onError: (error) => {
@@ -38,6 +39,8 @@ export default function Login() {
 
   const onSubmit = (formData: any) => {
     loginService.mutate(formData);
+    // console.log('sdasd');
+    
   };
 
   return (

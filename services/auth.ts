@@ -19,12 +19,12 @@ export const loginUser = async (params:any) => {
   return data;
 };
 
+
 export const logoutUser = async () => {
   const { error } = await supabase.auth.signOut();
   if (error) throw error;
 
-  // Hapus cookie server-side
-//   await fetch("/api/logout", { method: "POST" });
+  await fetch("/api/logout", { method: "POST" });
 
   return true;
 };

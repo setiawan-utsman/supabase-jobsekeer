@@ -2,7 +2,8 @@ import { NextResponse, NextRequest } from "next/server";
 const publicPaths = ["/login", "/", "/register"];
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
-  const token = request.cookies.get("auth_token")?.value;
+  const token = request.cookies.get("auth_token")?.value || null;
+  // const token = sessionStorage.getItem("auth_token");
   const { pathname } = request.nextUrl;
   const isPublicPath = publicPaths.includes(pathname);
 

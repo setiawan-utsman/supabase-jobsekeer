@@ -17,7 +17,7 @@ export default function Header() {
    const { mutate: LogoutService, isPending } = useMutation({
      mutationFn: logoutUser,
      onSuccess: async() => {
-        await clearAuthToken();
+        // await clearAuthToken();
         router.replace("/login"); // ✅ Lebih aman
      },
      onError: (err) => {
