@@ -12,7 +12,7 @@ export default function LoginPage() {
           <div className="mb-8 relative">
             {/* <img src="/illustrations/logo.png" alt="Logo" width={250}  height={250}/> */}
             <Image
-              src="/illustrations/logo.png"
+              src="/favicon.ico"
               alt="Logo"
               width={120}
               height={100}
