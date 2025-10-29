@@ -57,7 +57,19 @@ export default function ManageTableWidget({data}:{data?:any}) {
                 <td className="capitalize border border-gray-200 py-3 px-3 text-gray-600">
                   {item.gender}
                 </td>
-                <td className="border border-gray-200 py-3 px-3 text-blue-600 underline truncate max-w-[180px]">
+                <td className="border border-gray-200 py-3 px-3 text-blue-600 underline truncate max-w-[180px] cursor-pointer" onClick={() => {
+                 if (item?.linkedin_link) {
+                   try {
+                     window.open(
+                       item.linkedin_link,
+                       "_blank",
+                       "noopener,noreferrer"
+                     );
+                   } catch (error) {
+                     console.error("Failed to open LinkedIn link:", error);
+                   }
+                 }
+                }}>
                   {item.linkedin_link}
                 </td>
               </tr>

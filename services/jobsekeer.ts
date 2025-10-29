@@ -13,16 +13,23 @@ export const getJobseekers = async ({
   search,
   page = 1,
   limit = 10,
+  sortBy = "id",
+  sortOrder = "desc",
 }: {
   jobId?: any;
   search?: string;
   page?: number;
   limit?: number;
+  sortBy?: string;
+  sortOrder?: string;
 }) => {
   const from = (page - 1) * limit;
   const to = from + limit - 1;
 
-  let query = supabase.from(TABLE_NAME).select("*", { count: "exact" }).range(from, to);
+  let query = supabase
+    .from(TABLE_NAME)
+    .select("*", { count: "exact" })
+    .range(from, to);
 
   // filter berdasarkan jobId
   if (jobId) {
@@ -33,6 +40,8 @@ export const getJobseekers = async ({
   if (search && search.trim() !== "") {
     query = query.or(`full_name.ilike.%${search}%,email.ilike.%${search}%`);
   }
+
+  query = query.order(sortBy, { ascending: sortOrder === "asc" });
 
   const { data, error, count } = await query;
 

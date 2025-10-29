@@ -34,7 +34,7 @@ export default function ResumeForm({ data, jobId }: { data: any, jobId: any }) {
   const applyJobService = useMutation({
     mutationFn: createJobseeker,
     onSuccess: (data) => {
-       toast.success("Apply job successfully", {
+       toast.success("Your application has been submitted successfully", {
          duration: 4000,
          style: { backgroundColor: "#fff", borderRadius: "10px" },
        });

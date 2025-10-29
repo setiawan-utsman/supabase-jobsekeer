@@ -9,24 +9,18 @@ export async function createJob(jobData: any) {
   return data;
 }
 
-// export async function getJobs(search?: string) {
-//    let query = supabase.from("jobs").select("*");
-//   if (search) {
-//     query = query.ilike("title", `%${search}%`); // pencarian case-insensitive
-//   }
-//   const { data, error } = await query.order("id", { ascending: true });
-//   if (error) throw error;
-//   return data;
-// }
-
 export async function getJobs({
   search = "",
   page = 1,
   limit = 10,
+  sortBy = "id",
+  sortOrder = "desc", 
 }: {
   search?: string;
   page?: number;
   limit?: number;
+  sortBy?: string;
+  sortOrder?: string;
 }) {
   const from = (page - 1) * limit;
   const to = from + limit - 1;
@@ -37,6 +31,8 @@ export async function getJobs({
   if (search) {
     query = query.or(`title.ilike.%${search}%,description.ilike.%${search}%`);
   }
+
+  query = query.order(sortBy, { ascending: sortOrder === "asc" });
 
   // Pagination
   query = query.range(from, to).order("id", { ascending: false });

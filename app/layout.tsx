@@ -5,17 +5,17 @@ import { Toaster } from "@/components/ui/sonner";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
 // ✅ SEO metadata
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Job Seeker Team" }],
   creator: "Job Seeker",
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://supabase-jobsekeer.vercel.app"),
   openGraph: {
     title: "Job Seeker – Temukan Karier Impianmu",
     description:
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Job Seeker",
     images: [
       {
-        url: "/illustrations/logo.png", 
+        url: "/illustrations/logo.png",
         width: 1200,
         height: 630,
         alt: "Job Seeker",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     description: "Temukan karier impianmu di platform Job Seeker.",
   },
   icons: {
-    icon: "/illustrations/16x16.png"
+    icon: "/illustrations/16x16.png",
   },
 };
 
@@ -70,7 +70,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="id">
+      <head>
+        <link rel="stylesheet" href="/fonts/index.css" />
+      </head>
       <body className="bg-background text-foreground antialiased">
         <Toaster />
         <Index>{children}</Index>

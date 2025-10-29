@@ -10,16 +10,16 @@ import { getJobs } from "@/services/job";
 import { useJobSekeerStore } from "@/store/useJobSekeerStore";
 import { useQuery } from "@tanstack/react-query";
 import { size } from "lodash";
-import { PlusIcon } from "lucide-react";
+import { PlusIcon, SortAscIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 
 export default function JobSeekerPage() {
   const router = useRouter();
-  const { setCardActive, search, setSearch, currentPage, setCurrentPage } = useJobSekeerStore();
+  const { setCardActive, search, setSearch, currentPage, setCurrentPage,  sort, setSort} = useJobSekeerStore();
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["jobs-seeker", search],
-    queryFn: async () => getJobs({search, page: currentPage, limit: 5 }),
+    queryKey: ["jobs-seeker", search, currentPage, sort],
+    queryFn: async () => getJobs({search, page: currentPage, limit: 5, sortBy: 'created_at', sortOrder: sort }),
   });
 
   useEffect(() => {
@@ -34,6 +34,14 @@ export default function JobSeekerPage() {
         setCurrentPage(page);
       }
     };
+
+      const handleSort = useCallback(() => {
+        if (sort === "asc") {
+          setSort("desc");
+        } else {
+          setSort("asc");
+        }
+      }, [sort]);
 
   return (
     <div className="grid md:grid-cols-4 sm:grid-cols-1 gap-8">
@@ -50,6 +58,27 @@ export default function JobSeekerPage() {
             <PlusIcon />
             Add Jobs
           </Button>
+        </div>
+
+        <div className="flex justify-between items-center">
+          <div className="font-semibold">
+            Total Job : <span className="text-primary">{data?.count}</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className="font-semibold text-lg">Urutkan:</div>
+            <Button
+              onClick={handleSort}
+              variant={"outline"}
+              className="border-gray-300"
+              size={"icon"}
+            >
+              {sort === "asc" ? (
+                <SortAscIcon className="w-4 h-4" />
+              ) : (
+                <SortAscIcon className="w-4 h-4 rotate-180" />
+              )}
+            </Button>
+          </div>
         </div>
 
         {isLoading ? (

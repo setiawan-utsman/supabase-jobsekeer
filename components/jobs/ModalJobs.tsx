@@ -124,7 +124,7 @@ const resetDefault = () => {
           queryKey: ["jobs-list-widget"],
           exact: false,
         });
-        toast.success("Job created successfully", {
+        toast.success("Your application has been submitted successfully", {
           duration: 4000,
           // position: "top-center",
           style: { backgroundColor: "#fff", borderRadius: "10px" },
@@ -132,7 +132,11 @@ const resetDefault = () => {
         onCloseModal();
       },
       onError: () => {
-        alert("Failed to update job");
+        toast.error("Missing required fields highlighted.",{
+          duration: 4000,
+          // position: "top-center",
+          style: { backgroundColor: "#f6cece38", borderRadius: "10px" },
+        });
       },
     });
 
@@ -143,14 +147,18 @@ const resetDefault = () => {
           queryKey: ["jobs-list-widget"],
           exact: false,
         });
-        toast.success("Job updated successfully", {
+        toast.success("Your application has been updated successfully", {
           duration: 4000,
           style: { backgroundColor: "#fff", borderRadius: "10px" },
-        })
+        });
         onCloseModal();
       },
       onError: () => {
-        alert("Failed to update job");
+        toast.error("Missing required fields highlighted.",{
+          duration: 4000,
+          // position: "top-center",
+          style: { backgroundColor: "#f6cece38", borderRadius: "10px" },
+        });
       },
     });
 

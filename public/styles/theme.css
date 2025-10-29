@@ -10,4 +10,6 @@
   --breakpoint-2xl: 96rem; /* 1536px */
 
   --color-background: hsl(0 0% 100%);
+
+  --font-sans: "Poppins", sans-serif;
 }
