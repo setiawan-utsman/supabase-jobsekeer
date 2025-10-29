@@ -1,6 +1,5 @@
 import Login from "@/components/auth/Login";
 import Image from "next/image";
-// import Image from 'next/image';
 import React from "react";
 
 export default function LoginPage() {
@@ -20,7 +19,6 @@ export default function LoginPage() {
               className="cursor-pointer"
             />
           </div>
-
           <Login />
         </div>
       </div>
