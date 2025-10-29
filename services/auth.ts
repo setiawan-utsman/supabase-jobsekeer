@@ -16,6 +16,7 @@ export const loginUser = async (params:any) => {
     password: params.password,
   });
   if (error) throw error;
+  
   return data;
 };
 

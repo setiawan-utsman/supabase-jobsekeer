@@ -7,7 +7,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen">
       {/* Kiri: Form Login */}
       <div className="flex flex-1 items-center justify-center">
-        <div className="w-96">
+        <div className="md:w-96 xs:w-85">
           {/* Logo */}
           <div className="mb-8 relative">
             {/* <img src="/illustrations/logo.png" alt="Logo" width={250}  height={250}/> */}
