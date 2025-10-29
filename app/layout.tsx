@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Job Seeker Team" }],
   creator: "Job Seeker",
-  metadataBase: new URL("https://yourdomain.com")
+  metadataBase: new URL("https://yourdomain.com"),
   openGraph: {
     title: "Job Seeker – Temukan Karier Impianmu",
     description:
