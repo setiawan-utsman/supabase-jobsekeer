@@ -44,24 +44,6 @@ export const metadata: Metadata = {
   publisher: "Job Seeker",
   metadataBase: new URL("https://supabase-jobsekeer.vercel.app"),
 
-  // Robots
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-
-  // Verification (tambahkan jika sudah punya)
-  // verification: {
-  //   google: 'your-google-verification-code',
-  // },
-
   openGraph: {
     title: "Job Seeker – Temukan Karier Impianmu | Lowongan Kerja Terbaru",
     description:
