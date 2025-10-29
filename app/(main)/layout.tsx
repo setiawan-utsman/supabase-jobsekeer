@@ -2,7 +2,6 @@ import Header from '@/components/layout/Header';
 import React, { Suspense } from 'react'
 import LoadingMain from './loading';
 import { AnimatedGroup } from '@/components/motion-primitives/animated-group';
-// import '../globals.css';
 
 export default function MainLayout({
     children,

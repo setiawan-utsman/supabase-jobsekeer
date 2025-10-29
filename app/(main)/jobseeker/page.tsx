@@ -6,7 +6,6 @@ import DynamicPagination from "@/components/Pagination";
 import LoadingDefault, { NoData } from "@/components/skeleton/LoadingDefault";
 import LoadingJobs from "@/components/skeleton/LoadingJobs";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { getJobs } from "@/services/job";
 import { useJobSekeerStore } from "@/store/useJobSekeerStore";
 import { useQuery } from "@tanstack/react-query";

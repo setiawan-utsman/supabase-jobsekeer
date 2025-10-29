@@ -13,9 +13,6 @@ export default function LoadingMain() {
             alt="Logo"
           />
         </div>
-        {/* <h1 className="text-4xl font-bold text-background-dark dark:text-background-light">
-          Ada job baru di Rakamin
-        </h1> */}
         <p className="mt-2 text-base text-gray-500 dark:text-gray-400 max-w-sm">
           Memuat data dan mempersiapkan pengalaman terbaik untuk Anda.
         </p>

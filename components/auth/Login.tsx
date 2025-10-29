@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "@tanstack/react-query";
-import { cookies } from "next/headers";
 import { useRouter } from "next/navigation";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { Label } from "../ui/label";
@@ -11,13 +10,6 @@ import { Button } from "../ui/button";
 import { loginUser } from "@/services/auth";
 import { setAuthToken } from "./auth";
 
-// const shema = yup.object().shape({
-//   username: yup.string().required("Username is required"),
-//   password: yup
-//     .string()
-//     .min(6, "Password must be at least 6 characters")
-//     .required("Password is required"),
-// });
 
 interface IFormLogin {
   email: string;
@@ -40,12 +32,7 @@ export default function Login() {
       router.push("/jobs");
     },
     onError: (error) => {
-      //  console.error("Login gagal ❌", error);
-      //  toast.error("Login gagal.", {
-      //    duration: 3000,
-      //    position: "top-center",
-      //    style: { backgroundColor: "#f96161", color: "white" },
-      //  });
+       console.error("Login gagal ❌", error);
     },
   });
 
