@@ -16,7 +16,7 @@ export default function ManagePage() {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["jobs-manage", id, search, currentPage],
     queryFn: async () => getJobseekers({ jobId: id , search, page: currentPage, limit: 10 }),
   });

@@ -8,14 +8,6 @@ export const createJobseeker = async (data:any) => {
   return true;
 };
 
-// export const getJobseekers = async (jobId?: any) => {
-//   let query = supabase.from(TABLE_NAME).select("*");
-//   if (jobId) query = query.eq("job_id", jobId);
-//   const { data, error } = await query;
-//   if (error) throw error;
-//   return data;
-// };
-
 export const getJobseekers = async ({
   jobId,
   search,
