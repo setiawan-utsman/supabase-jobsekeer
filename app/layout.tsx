@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Job Seeker Team" }],
   creator: "Job Seeker",
-  metadataBase: new URL("https://yourdomain.com"), // ganti domain kamu
+  metadataBase: new URL("https://yourdomain.com")
   openGraph: {
     title: "Job Seeker – Temukan Karier Impianmu",
     description:
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Job Seeker",
     images: [
       {
-        url: "/illustrations/logo.png", // ganti sesuai path og image kamu
+        url: "/illustrations/logo.png", 
         width: 1200,
         height: 630,
         alt: "Job Seeker",
@@ -57,12 +57,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Job Seeker",
     description: "Temukan karier impianmu di platform Job Seeker.",
-    images: ["/og-image.jpg"], // optional
   },
   icons: {
-    icon: "/illustrations/16x16.png", // ✅ favicon custom di root folder public/
+    icon: "/illustrations/16x16.png"
   },
 };
+
 
 export default function RootLayout({
   children,
