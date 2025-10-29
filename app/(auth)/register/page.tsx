@@ -11,7 +11,7 @@ export default function RegisterPage() {
           {/* Logo */}
           <div className="mb-8 relative">
             <Image
-              src="/illustrations/logo.png"
+              src="/favicon.ico"
               alt="Logo"
               width={120}
               height={100}
