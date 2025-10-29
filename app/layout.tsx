@@ -20,46 +20,83 @@ import { Geist, Geist_Mono } from "next/font/google";
 // ✅ SEO metadata
 export const metadata: Metadata = {
   title: {
-    default: "Job Seeker – Temukan Karier Impianmu",
+    default: "Job Seeker – Temukan Karier Impianmu | Lowongan Kerja Terbaru",
     template: "%s | Job Seeker",
   },
   description:
-    "Platform pencarian kerja terbaik untuk menemukan lowongan sesuai keahlianmu. Dibangun menggunakan Next.js modern dan teknologi React terkini.",
+    "Platform pencarian kerja terpercaya di Indonesia. Temukan ribuan lowongan kerja terbaru dari perusahaan terkemuka. Lamar pekerjaan impianmu sekarang!",
   keywords: [
-    "Job Seeker",
-    "Lowongan Kerja",
-    "Karier",
-    "Next.js",
-    "React",
-    "Frontend Developer",
+    "lowongan kerja",
+    "cari kerja",
+    "job vacancy",
+    "karir",
+    "rekrutmen",
+    "lamaran kerja",
+    "job seeker indonesia",
+    "portal kerja",
+    "job portal",
+    "frontend developer jobs",
+    "backend developer jobs",
+    "fullstack developer jobs",
   ],
   authors: [{ name: "Job Seeker Team" }],
   creator: "Job Seeker",
+  publisher: "Job Seeker",
   metadataBase: new URL("https://supabase-jobsekeer.vercel.app"),
+
+  // Robots
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  // Verification (tambahkan jika sudah punya)
+  // verification: {
+  //   google: 'your-google-verification-code',
+  // },
+
   openGraph: {
-    title: "Job Seeker – Temukan Karier Impianmu",
+    title: "Job Seeker – Temukan Karier Impianmu | Lowongan Kerja Terbaru",
     description:
-      "Platform pencarian kerja terbaik untuk menemukan lowongan sesuai keahlianmu.",
-    url: "https://yourdomain.com",
+      "Platform pencarian kerja terpercaya di Indonesia. Temukan ribuan lowongan kerja terbaru dari perusahaan terkemuka.",
+    url: "https://supabase-jobsekeer.vercel.app",
     siteName: "Job Seeker",
     images: [
       {
         url: "/illustrations/logo.png",
         width: 1200,
         height: 630,
-        alt: "Job Seeker",
+        alt: "Job Seeker - Platform Pencarian Kerja Terpercaya",
       },
     ],
     locale: "id_ID",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Job Seeker",
-    description: "Temukan karier impianmu di platform Job Seeker.",
+    title: "Job Seeker – Temukan Karier Impianmu",
+    description:
+      "Platform pencarian kerja terpercaya di Indonesia. Temukan ribuan lowongan kerja terbaru.",
+    images: ["/illustrations/logo.png"],
   },
+
   icons: {
     icon: "/illustrations/16x16.png",
+    shortcut: "/illustrations/16x16.png",
+    apple: "/illustrations/logo.png",
+  },
+
+  // Alternate languages
+  alternates: {
+    canonical: "https://supabase-jobsekeer.vercel.app",
   },
 };
 
