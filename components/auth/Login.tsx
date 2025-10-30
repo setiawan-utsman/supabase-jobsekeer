@@ -29,7 +29,7 @@ export default function Login() {
     onSuccess: async(data: any) => {
       const session = data?.session;
       await setAuthToken(session.access_token);
-      router.push("/jobs");
+      router.push("/jobseeker");
     },
     onError: (error) => {
        console.error("Login gagal ❌", error);
